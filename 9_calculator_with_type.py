@@ -29,3 +29,41 @@ elif oper == 'power':
 
 else :
     print('Not supported operation!')
+
+"""
+def operation(operation, a, b):
+    if operation == "+":
+        result = a + b
+
+    elif operation == "-":
+        result = a - b
+
+    elif operation == "*":
+        result = a * b
+
+    elif operation == "/":
+        if b == 0:
+            raise Exception("B cannot be zero")
+        result = a / b
+
+    elif operation == "**":
+        result = a ** b
+
+    else:
+        raise Exception(f"Operation {operation} not supported")
+
+    return float(format(result, ".3f"))
+
+
+a = float(input("a: "))
+b = float(input("b: "))
+operation_str = input("operation: ")
+type = input("Type: ")
+
+if type == "INT":
+    a = int(a)
+    b = int(b)
+
+
+print(operation(operation_str, a, b))
+"""

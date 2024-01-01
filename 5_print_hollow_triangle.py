@@ -8,3 +8,17 @@ for row in range(num):
         else:
             print(" ", end="")
     print()
+
+"""
+N = int(input("N: "))
+
+for i in range(N):
+  padding = " " * (N - i - 1)
+  stars = "*"
+
+  if i > 0:
+    stars = "*" + " " * (i * 2 - 1) + "*"
+
+  print(f"{padding}{stars}")
+
+"""

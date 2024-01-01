@@ -11,4 +11,28 @@ if num > 1:
 else:
     print("Number is not prime")
 
+"""
+def is_prime(num):
+  if num <= 1:
+    return False
 
+  if num <= 3:
+    return True
+  
+  if not num % 2:
+    return False 
+
+  for i in range(5, num // 2, 2):
+    if not num % i:
+      return False
+    
+  return True
+
+
+N = int(input("N: "))
+
+if is_prime(N):
+  print(f"{N} is prime")
+else:
+  print(f"{N} is not prime")
+"""
