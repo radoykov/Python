@@ -1,0 +1,63 @@
+from tkinter import *
+from math import sqrt
+from tkinter import ttk
+
+def calculate(*args):
+    try:
+        a = float(a_str.get())
+        b = float(b_str.get())
+        c = float(c_str.get())
+        discr = (b*b)-(4*a*c)
+
+        if(discr>=0):
+            x1.set(round((-b-sqrt(discr))/(2*a),4))
+            x2.set(round((-b+sqrt(discr))/(2*a),4))
+        else:
+            x1.set('No real root')
+            x2.set('No real root')
+
+    except ValueError:
+        pass
+
+        
+
+root = Tk()
+root.title("Quadratic roots")
+
+mainframe = ttk.Frame(root, padding="3 3 12 12")
+mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
+root.columnconfigure(0, weight=1)
+root.rowconfigure(0, weight=1)
+
+a_str = StringVar()
+b_str = StringVar()
+c_str = StringVar()
+x1 = StringVar()
+x2 = StringVar()
+
+ttk.Button(mainframe, text="Calculate", command=calculate).grid(column=3, row=2, sticky=W)
+
+ttk.Label(mainframe, text="a").grid(column=1, row=1, sticky=E)
+ttk.Entry(mainframe, width=7, textvariable=a_str).grid(column=2, row=1, sticky=(W, E))
+
+ttk.Label(mainframe, text="b").grid(column=1, row=2, sticky=E)
+ttk.Entry(mainframe, width=7, textvariable=b_str).grid(column=2, row=2, sticky=(W, E))
+
+ttk.Label(mainframe, text="c").grid(column=1, row=3, sticky=E)
+ttk.Entry(mainframe, width=7, textvariable=c_str).grid(column=2, row=3, sticky=(W, E))
+
+
+ttk.Label(mainframe, text="x1").grid(column=1, row=4, sticky=E)
+ttk.Label(mainframe, textvariable=x1).grid(column=2, row=4, sticky=(W, E))
+
+ttk.Label(mainframe, text="x2").grid(column=1, row=5, sticky=E)
+ttk.Label(mainframe, textvariable=x2).grid(column=2, row=5, sticky=(W, E))
+
+
+for child in mainframe.winfo_children():
+    child.grid_configure(padx=5, pady=5)
+
+#feet_entry.focus()
+root.bind("<Return>", calculate)
+
+root.mainloop()
